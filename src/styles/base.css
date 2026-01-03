@@ -55,7 +55,11 @@ select {
     --color-background: #EDE6D8;
     --color-surface: #FFFFFF;
     --color-text: #000000;
-    --color-gray: #8A9199;
+    --color-success: #3EE6C1;
+    --color-warning: #F2C46D;
+    --color-danger: #8C2F2F;
+    --color-processing: #3A6EFF;
+    --color-disabled: #8A9199;
 
     --spacing-xs: 4px;
     --spacing-sm: 8px;
