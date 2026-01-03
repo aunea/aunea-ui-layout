@@ -1,0 +1,42 @@
+:root {
+    --color-background: #EDE6D8;
+    --color-surface: #FFFFFF;
+    --color-text: #000000;
+    --color-gray: #8A9199;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+
+    --font-family: Inter, system-ui, sans-serif;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+}
+
+[data-theme="dark"] {
+    --color-background: #000000;
+    --color-surface: #111111;
+    --color-text: #EDE6D8;
+    --color-gray: #8A9199;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: var(--color-background);
+    color: var(--color-text);
+}
+
+.surface {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+}
