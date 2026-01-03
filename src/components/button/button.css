@@ -1,0 +1,67 @@
+.ui-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    border: none;
+
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Variants */
+.ui-button--primary {
+    background: var(--color-text);
+    color: var(--color-background);
+}
+
+.ui-button--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ui-button--success {
+    background: var(--color-success);
+    color: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ui-button--warning {
+    background: var(--color-warning);
+    color: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ui-button--danger {
+    background: var(--color-danger);
+    color: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ui-button--processing {
+    background: var(--color-processing);
+    color: var(--color-background);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* States */
+.ui-button:hover {
+    transform: translateY(-1px);
+}
+
+.ui-button:active {
+    transform: translateY(0);
+}
+
+.ui-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
