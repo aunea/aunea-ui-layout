@@ -1,3 +1,56 @@
+/* =========================
+   CSS RESET (modern & safe)
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Remove default margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Form elements inherit font */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* =========================
+   DESIGN TOKENS (CSS VARS)
+   ========================= */
+
+/* 🌕 Light theme (default) */
 :root {
     --color-background: #EDE6D8;
     --color-surface: #FFFFFF;
@@ -12,12 +65,13 @@
     --radius-sm: 6px;
     --radius-md: 12px;
 
-    --font-family: Inter, system-ui, sans-serif;
+    --font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     --font-size-sm: 14px;
     --font-size-md: 16px;
     --font-size-lg: 18px;
 }
 
+/* 🌑 Dark theme (optional) */
 [data-theme="dark"] {
     --color-background: #000000;
     --color-surface: #111111;
@@ -25,13 +79,14 @@
     --color-gray: #8A9199;
 }
 
-* {
-    box-sizing: border-box;
-}
+/* =========================
+   BASE STYLES
+   ========================= */
 
 body {
-    margin: 0;
     font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    line-height: 1.5;
     background: var(--color-background);
     color: var(--color-text);
 }
