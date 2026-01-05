@@ -2,12 +2,29 @@
   "name": "@aunea/ui-layout",
   "version": "0.1.2",
   "description": "AUNE-A design system: tokens and base styles",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "src"
   ],
   "license": "Apache-2.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "style-dictionary": "^5.1.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "scripts": {
+    "build:tokens": "node src/design-system/build/build-tokens.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist"
   }
 }
