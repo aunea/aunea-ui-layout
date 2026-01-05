@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AUNE-A UI Layout Demo</title>
+
+    <!-- Token styles -->
+    <link rel="stylesheet" href="../src/design-system/dist/tokens.css" />
+
+    <!-- Components -->
+    <!-- Button styles -->
+    <link rel="stylesheet" href="../src/styles/button.css" />
+
+    <style>
+        body {
+            background: var(--color-surface-primary);
+            color: var(--color-text-primary);
+            font-family: var(--font-family-base);
+            padding: var(--spacing-stack-xl);
+        }
+
+        h2 {
+            margin: var(--spacing-stack-lg) 0 var(--spacing-stack-md);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-stack-md);
+            align-items: center;
+        }
+
+        .section {
+            margin-bottom: var(--spacing-stack-2xl);
+        }
+    </style>
+</head>
+
+<!-- Light theme is default -->
+<body>
+
+<h1>AUNE-A • Button System</h1>
+
+<!-- ========================= -->
+<!-- SOLID BUTTONS -->
+<!-- ========================= -->
+
+<section class="section">
+    <h2>Solid buttons</h2>
+    <div class="row">
+        <button class="ui-button ui-button--solid ui-button--dark ui-button--md">Dark</button>
+        <button class="ui-button ui-button--solid ui-button--light ui-button--md">Light</button>
+        <button class="ui-button ui-button--solid ui-button--success ui-button--md">Success</button>
+        <button class="ui-button ui-button--solid ui-button--warning ui-button--md">Warning</button>
+        <button class="ui-button ui-button--solid ui-button--danger ui-button--md">Danger</button>
+        <button class="ui-button ui-button--solid ui-button--processing ui-button--md">Processing</button>
+        <button class="ui-button ui-button--solid ui-button--gray ui-button--md">Gray</button>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- OUTLINE BUTTONS -->
+<!-- ========================= -->
+
+<section class="section">
+    <h2>Outline buttons</h2>
+    <div class="row">
+        <button class="ui-button ui-button--outline ui-button--dark ui-button--md">Dark</button>
+        <button class="ui-button ui-button--outline ui-button--light ui-button--md">Light</button>
+        <button class="ui-button ui-button--outline ui-button--success ui-button--md">Success</button>
+        <button class="ui-button ui-button--outline ui-button--warning ui-button--md">Warning</button>
+        <button class="ui-button ui-button--outline ui-button--danger ui-button--md">Danger</button>
+        <button class="ui-button ui-button--outline ui-button--processing ui-button--md">Processing</button>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- GHOST BUTTONS -->
+<!-- ========================= -->
+
+<section class="section">
+    <h2>Ghost buttons</h2>
+    <div class="row">
+        <button class="ui-button ui-button--ghost ui-button--dark ui-button--md">Ghost dark</button>
+        <button class="ui-button ui-button--ghost ui-button--light ui-button--md">Ghost light</button>
+        <button class="ui-button ui-button--ghost ui-button--success ui-button--md">Ghost success</button>
+        <button class="ui-button ui-button--ghost ui-button--warning ui-button--md">Ghost warning</button>
+        <button class="ui-button ui-button--ghost ui-button--danger ui-button--md">Ghost danger</button>
+        <button class="ui-button ui-button--ghost ui-button--processing ui-button--md">Ghost processing</button>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- SIZES -->
+<!-- ========================= -->
+
+<section class="section">
+    <h2>Sizes</h2>
+    <div class="row">
+        <button class="ui-button ui-button--solid ui-button--dark ui-button--sm">Small</button>
+        <button class="ui-button ui-button--solid ui-button--dark ui-button--md">Medium</button>
+        <button class="ui-button ui-button--solid ui-button--dark ui-button--lg">Large</button>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- ROUND BUTTONS -->
+<!-- ========================= -->
+
+<section class="section">
+    <h2>Round buttons</h2>
+    <div class="row">
+        <button class="ui-button ui-button--solid ui-button--warning ui-button--round ui-button--lg">
+            🎤
+        </button>
+
+        <button class="ui-button ui-button--outline ui-button--dark ui-button--round ui-button--md">
+            ⚙️
+        </button>
+
+        <button class="ui-button ui-button--ghost ui-button--danger ui-button--round ui-button--sm">
+            ✕
+        </button>
+    </div>
+</section>
+
+<!-- ========================= -->
+<!-- DISABLED -->
+<!-- ========================= -->
+
+<section class="section">
+    <h2>Disabled</h2>
+    <div class="row">
+        <button class="ui-button ui-button--solid ui-button--dark ui-button--md" disabled>
+            Disabled
+        </button>
+    </div>
+</section>
+
+</body>
+</html>
