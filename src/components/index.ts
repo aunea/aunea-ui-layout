@@ -1,1 +1,1 @@
-export * from './components/button/CustomButton'
+export * from './button/CustomButton';

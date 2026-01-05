@@ -5,17 +5,18 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
   "license": "Apache-2.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rimraf": "^6.1.2",
     "style-dictionary": "^5.1.1"
   },
   "peerDependencies": {
@@ -23,8 +24,8 @@
     "react-dom": "^18.0.0"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "build:tokens": "node src/design-system/build/build-tokens.mjs",
-    "build": "tsc -p tsconfig.build.json",
-    "clean": "rm -rf dist"
+    "build": "npm run clean && npm run build:tokens && tsc -p tsconfig.build.json"
   }
 }
