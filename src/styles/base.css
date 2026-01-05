@@ -17,7 +17,6 @@ body {
     min-height: 100vh;
 }
 
-/* Remove default margins */
 h1,
 h2,
 h3,
@@ -28,7 +27,6 @@ p {
     margin: 0;
 }
 
-/* Media defaults */
 img,
 picture,
 video,
@@ -38,7 +36,6 @@ svg {
     max-width: 100%;
 }
 
-/* Form elements inherit font */
 input,
 button,
 textarea,
@@ -47,40 +44,83 @@ select {
 }
 
 /* =========================
-   DESIGN TOKENS (CSS VARS)
+   DESIGN TOKENS
    ========================= */
 
 /* 🌕 Light theme (default) */
 :root {
+    /* Colors */
     --color-background: #EDE6D8;
-    --color-surface: #FFFFFF;
-    --color-text: #000000;
+
+    --color-surface-primary: #FFFFFF;
+    --color-surface-secondary: #111111;
+
+    --color-text-primary: #000000;
+    --color-text-secondary: #6B6B6B;
+    --color-text-inverse: #EDE6D8;
+    --color-text-disabled: #8A9199;
+
     --color-success: #3EE6C1;
     --color-warning: #F2C46D;
     --color-danger: #8C2F2F;
     --color-processing: #3A6EFF;
-    --color-disabled: #8A9199;
 
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
+    --color-border-subtle: rgba(0, 0, 0, 0.08);
+    --color-border-default: rgba(0, 0, 0, 0.16);
 
-    --radius-sm: 6px;
+    /* Spacing */
+    --spacing-inline-xs: 4px;
+    --spacing-inline-sm: 8px;
+    --spacing-inline-md: 12px;
+
+    --spacing-stack-xs: 8px;
+    --spacing-stack-sm: 16px;
+    --spacing-stack-md: 24px;
+    --spacing-stack-lg: 40px;
+    --spacing-stack-xl: 64px;
+
+    --spacing-layout-section: 64px;
+    --spacing-layout-page: 96px;
+    --spacing-layout-hero: 120px;
+
+    /* Radius */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
     --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-round: 999px;
+    --radius-circle: 50%;
 
+    /* Typography */
     --font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-size-sm: 14px;
-    --font-size-md: 16px;
-    --font-size-lg: 18px;
+
+    --font-size-caption: 12px;
+    --font-size-body: 14px;
+    --font-size-ui: 16px;
+    --font-size-title: 20px;
+    --font-size-hero: 32px;
+
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+
+    /* Shadow */
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-md: 0 6px 16px rgba(0,0,0,0.12);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.18);
 }
 
-/* 🌑 Dark theme (optional) */
 [data-theme="dark"] {
     --color-background: #000000;
-    --color-surface: #111111;
-    --color-text: #EDE6D8;
-    --color-gray: #8A9199;
+
+    --color-surface-primary: #111111;
+    --color-surface-secondary: #000000;
+
+    --color-text-primary: #EDE6D8;
+    --color-text-secondary: rgba(237, 230, 216, 0.7);
+
+    --color-border-subtle: rgba(255,255,255,0.08);
+    --color-border-default: rgba(255,255,255,0.16);
 }
 
 /* =========================
@@ -89,13 +129,23 @@ select {
 
 body {
     font-family: var(--font-family);
-    font-size: var(--font-size-md);
-    line-height: 1.5;
+    font-size: var(--font-size-ui);
+    line-height: var(--line-height-normal);
+
     background: var(--color-background);
-    color: var(--color-text);
+    color: var(--color-text-primary);
 }
 
 .surface {
-    background: var(--color-surface);
+    background: var(--color-surface-primary);
     border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-disabled {
+    color: var(--color-text-disabled);
 }
