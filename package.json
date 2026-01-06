@@ -26,6 +26,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build:tokens": "node src/design-system/build/build-tokens.mjs",
-    "build": "npm run clean && npm run build:tokens && tsc -p tsconfig.build.json"
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build:css": "node scripts/build-css.mjs",
+    "build": "npm run clean && npm run build:tokens && npm run build:ts && npm run build:css"
   }
 }
