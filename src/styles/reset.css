@@ -1,0 +1,111 @@
+/* =========================
+   CSS RESET — AUNE-A
+   ========================= */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove margens padrão */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Evita zoom automático em mobile */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Corpo sem estilo implícito */
+body {
+    min-height: 100vh;
+    line-height: 1;
+}
+
+/* Remove margens de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote {
+    margin: 0;
+}
+
+/* Listas sem estilo */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Links neutros */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Mídia previsível */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Form elements herdando fonte */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+}
+
+/* Remove bordas e aparência nativa */
+button {
+    border: 0;
+    padding: 0;
+    background: none;
+}
+
+/* Remove estilos automáticos */
+input,
+textarea {
+    border: 0;
+    outline: none;
+}
+
+/* Evita highlight azul no mobile */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Corrige fontes em SVG */
+svg {
+    fill: currentColor;
+}
+
+/* Remove animações para prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

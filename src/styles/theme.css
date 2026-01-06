@@ -1,0 +1,95 @@
+/* =========================
+   THEME — LIGHT (default)
+   ========================= */
+
+:root {
+    /* Backgrounds */
+    --app-background: var(--color-background-light);
+    --app-background-inverse: var(--color-background-dark);
+    --app-surface-primary: var(--color-surface-primary);
+    --app-surface-secondary: rgba(255, 255, 255, 0.6);
+    --app-surface-overlay: var(--color-surface-overlay);
+
+    /* Text */
+    --app-text-primary: var(--color-text-primary-dark);
+    --app-text-primary-inverse: var(--color-text-primary-light);
+    --app-text-secondary: var(--color-text-secondary);
+    --app-text-muted: var(--color-text-muted);
+    --app-text-disabled: var(--color-text-disabled);
+
+    /* Borders */
+    --app-border-default: var(--color-border-default);
+    --app-border-subtle: var(--color-border-subtle);
+
+    /* Status */
+    --app-success: var(--color-status-success);
+    --app-warning: var(--color-status-warning);
+    --app-danger: var(--color-status-danger);
+    --app-processing: var(--color-status-processing);
+
+    /* Shadows */
+    --app-shadow-subtle: var(--shadow-light-subtle);
+    --app-shadow-default: var(--shadow-light-default);
+    --app-shadow-hover: var(--shadow-light-hover);
+
+    /* Buttons */
+    --app-button-bg: var(--color-text-primary-light);
+    --app-button-text: var(--color-text-primary-light);
+    --app-button-border: transparent;
+
+    --app-button-outline-bg: transparent;
+    --app-button-outline-text: var(--color-border-default);
+    --app-button-outline-border: var(--color-border-default);
+
+    --app-button-ghost-bg: transparent;
+    --app-button-ghost-text: var(--btn-border);
+    --app-button-ghost-border: transparent;
+}
+
+/* =========================
+   THEME — DARK
+   ========================= */
+
+[data-theme="dark"] {
+    /* Backgrounds */
+    --app-background: var(--color-background-dark);
+    --app-background-inverse: var(--color-background-light);
+    --app-surface-primary: var(--color-surface-secondary);
+    --app-surface-secondary: rgba(255, 255, 255, 0.04);
+    --app-surface-overlay: rgba(0, 0, 0, 0.7);
+
+    /* Text */
+    --app-text-primary: var(--color-text-primary-light);
+    --app-text-primary-inverse: var(--color-text-primary-dark);
+    --app-text-secondary: rgba(237, 230, 216, 0.7);
+    --app-text-muted: rgba(237, 230, 216, 0.45);
+    --app-text-disabled: rgba(237, 230, 216, 0.35);
+
+    /* Borders */
+    --app-border-default: rgba(255, 255, 255, 0.16);
+    --app-border-subtle: rgba(255, 255, 255, 0.08);
+
+    /* Status */
+    --app-success: var(--color-status-success);
+    --app-warning: var(--color-status-warning);
+    --app-danger: var(--color-status-danger);
+    --app-processing: var(--color-status-processing);
+
+    /* Shadows */
+    --app-shadow-subtle: var(--shadow-dark-subtle);
+    --app-shadow-default: var(--shadow-dark-default);
+    --app-shadow-hover: var(--shadow-dark-hover);
+
+    /* Buttons */
+    --app-button-bg: var(--color-text-primary-dark);
+    --app-button-text: var(--color-background-dark);
+    --app-button-border: transparent;
+
+    --app-button-outline-bg: transparent;
+    --app-button-outline-text: var(--color-text-primary-light);
+    --app-button-outline-border: rgba(255, 255, 255, 0.25);
+
+    --app-button-ghost-bg: transparent;
+    --app-button-ghost-text: var(--btn-border);
+    --app-button-ghost-border: transparent;
+}

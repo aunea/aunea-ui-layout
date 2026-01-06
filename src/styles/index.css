@@ -1,5 +1,8 @@
 /* Design tokens */
 @import '../design-system/dist/tokens.css';
 
-/* Components */
-@import './button.css';
+/* Styles */
+@import '../styles/reset.css';
+@import '../styles/theme.css';
+@import '../styles/gradients.css';
+@import '../styles/button.css';

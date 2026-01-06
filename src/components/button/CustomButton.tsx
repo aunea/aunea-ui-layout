@@ -1,15 +1,14 @@
-import './button.css';
 import React from 'react';
 
 type ButtonVariant = 'solid' | 'outline' | 'ghost';
 type ButtonColor =
+    | 'all-state'
     | 'success'
     | 'warning'
     | 'danger'
     | 'processing'
     | 'gray'
-    | 'light'
-    | 'dark';
+    | 'main';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 type ButtonShape = 'default' | 'round';
@@ -29,24 +28,28 @@ export function CustomButton({
                                  label,
                                  icon,
                                  variant = 'solid',
-                                 color = 'dark',
+                                 color = 'main',
                                  size = 'md',
                                  shape = 'default',
                                  disabled = false,
                                  onClick,
                              }: Props) {
     const isIconOnly = !!icon && !label;
+    const isAllState = color === 'all-state';
 
     return (
         <button
             className={[
                 'ui-button',
                 `ui-button--${variant}`,
-                `ui-button--${color}`,
+                !isAllState && `ui-button--${color}`,
+                isAllState && 'ui-button--all-state',
                 `ui-button--${size}`,
                 shape === 'round' ? 'ui-button--round' : '',
                 isIconOnly ? 'ui-button--icon-only' : '',
-            ].join(' ')}
+            ]
+                .filter(Boolean)
+                .join(' ')}
             disabled={disabled}
             onClick={onClick}
         >

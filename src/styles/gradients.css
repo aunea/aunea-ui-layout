@@ -1,0 +1,21 @@
+@keyframes all-state-gradient {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 200% 50%;
+    }
+}
+
+:root {
+    --gradient-all-state: linear-gradient(
+            90deg,
+            var(--app-warning) 0%,
+            var(--app-success) 25%,
+            var(--app-processing) 50%,
+            var(--app-danger) 75%,
+            var(--app-warning) 95%
+    );
+    background-size: 200% 200%;
+}
+

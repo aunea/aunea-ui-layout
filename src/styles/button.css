@@ -12,16 +12,15 @@
     font-weight: var(--font-weight-medium);
     line-height: var(--font-line-height-default);
 
-    border-radius: var(--radius-md);
     border: none;
+    border-radius: var(--radius-md);
     cursor: pointer;
     white-space: nowrap;
 
-    transition:
-            background-color var(--motion-duration-fast) ease,
-            color var(--motion-duration-fast) ease,
-            box-shadow var(--motion-duration-fast) ease,
-            transform var(--motion-duration-fast) ease;
+    transition: background-color var(--motion-duration-fast) ease,
+    color var(--motion-duration-fast) ease,
+    box-shadow var(--motion-duration-fast) ease,
+    transform var(--motion-duration-fast) ease;
 }
 
 /* =========================
@@ -79,13 +78,13 @@
 }
 
 /* =========================
-   Variants
+   Variants (base)
    ========================= */
 
 .ui-button--solid {
     background: var(--btn-bg);
     color: var(--btn-text);
-    box-shadow: var(--shadow-default);
+    box-shadow: var(--app-shadow-default);
 }
 
 .ui-button--outline {
@@ -97,6 +96,89 @@
 .ui-button--ghost {
     background: transparent;
     color: var(--btn-border);
+    box-shadow: none;
+}
+
+/* =========================
+   All-state variant
+   ========================= */
+
+/* Solid + all-state */
+.ui-button--all-state.ui-button--solid {
+    position: relative;
+    overflow: hidden;
+
+    color: var(--app-text-primary-inverse);
+    background: none;
+
+    isolation: isolate;
+}
+
+.ui-button--all-state.ui-button--solid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--gradient-all-state);
+    background-size: 200% 200%;
+    animation: all-state-gradient var(--motion-duration-slow) linear infinite;
+
+    z-index: -1;
+}
+
+.ui-button--all-state.ui-button--solid > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Outline + all-state */
+.ui-button--all-state.ui-button--outline {
+    position: relative;
+    background: none;
+
+    background-image: var(--gradient-all-state);
+    background-size: 200% 200%;
+    animation: all-state-gradient var(--motion-duration-slow) linear infinite;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.ui-button--all-state.ui-button--outline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+
+    background-image: var(--gradient-all-state);
+    background-size: 200% 200%;
+    animation: all-state-gradient var(--motion-duration-slow) linear infinite;
+
+    border-radius: inherit;
+
+    -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: 0;
+}
+
+.ui-button--all-state.ui-button--outline > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ghost + all-state */
+.ui-button--all-state.ui-button--ghost {
+    background-image: var(--gradient-all-state);
+    background-size: 200% 200%;
+    animation: all-state-gradient var(--motion-duration-slow) linear infinite;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* =========================
@@ -104,13 +186,13 @@
    ========================= */
 
 .ui-button:hover:not(:disabled) {
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--app-shadow-hover);
     transform: translateY(-1px);
 }
 
 .ui-button:active:not(:disabled) {
+    box-shadow: var(--app-shadow-subtle);
     transform: translateY(0);
-    box-shadow: var(--shadow-subtle);
 }
 
 .ui-button:disabled {
@@ -123,44 +205,38 @@
    Color mappings
    ========================= */
 
+.ui-button--main {
+    --btn-bg: var(--app-background-inverse);
+    --btn-text: var(--app-text-primary-inverse);
+    --btn-border: var(--app-background-inverse);
+}
+
 .ui-button--success {
-    --btn-bg: var(--color-status-success);
-    --btn-text: var(--color-text-inverse);
-    --btn-border: var(--color-status-success);
+    --btn-bg: var(--app-success);
+    --btn-text: var(--app-text-primary-inverse);
+    --btn-border: var(--app-success);
 }
 
 .ui-button--warning {
-    --btn-bg: var(--color-status-warning);
-    --btn-text: var(--color-text-inverse);
-    --btn-border: var(--color-status-warning);
+    --btn-bg: var(--app-warning);
+    --btn-text: var(--app-text-primary-inverse);
+    --btn-border: var(--app-warning);
 }
 
 .ui-button--danger {
-    --btn-bg: var(--color-status-danger);
-    --btn-text: var(--color-text-inverse);
-    --btn-border: var(--color-status-danger);
+    --btn-bg: var(--app-danger);
+    --btn-text: var(--app-text-primary-inverse);
+    --btn-border: var(--app-danger);
 }
 
 .ui-button--processing {
-    --btn-bg: var(--color-status-processing);
-    --btn-text: var(--color-text-inverse);
-    --btn-border: var(--color-status-processing);
+    --btn-bg: var(--app-processing);
+    --btn-text: var(--app-text-primary-inverse);
+    --btn-border: var(--app-processing);
 }
 
 .ui-button--gray {
-    --btn-bg: var(--color-text-disabled);
-    --btn-text: var(--color-text-inverse);
-    --btn-border: var(--color-text-disabled);
-}
-
-.ui-button--dark {
-    --btn-bg: var(--color-background-dark);
-    --btn-text: var(--color-text-inverse);
-    --btn-border: var(--color-background-dark);
-}
-
-.ui-button--light {
-    --btn-bg: var(--color-background-light);
-    --btn-text: var(--color-text-primary);
-    --btn-border: var(--color-background-light);
+    --btn-bg: var(--app-text-disabled);
+    --btn-text: var(--app-text-primary-inverse);
+    --btn-border: var(--app-text-disabled);
 }
