@@ -1,0 +1,135 @@
+/* ===============================
+   ASSISTANT HEADER
+================================ */
+
+.assistant-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.aunea-text {
+    width: 60%;
+}
+
+.aunea-text h1 {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--color-warning);
+}
+
+.aunea-action {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 512px;
+}
+
+/* ===============================
+   ANCHOR + BUTTON
+================================ */
+
+.assistant-anchor {
+    position: relative;
+    display: inline-block;
+}
+
+.talk-to-aunea {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* ===============================
+   PORTAL (BURACO)
+================================ */
+
+.assistant-portal {
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #000;
+
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+
+    clip-path: circle(0% at center);
+    transform: scale(0.98);
+
+    transition:
+            clip-path 700ms cubic-bezier(0.2, 1, 0.3, 1),
+            transform 300ms ease;
+}
+
+.assistant-portal.open {
+    clip-path: circle(50% at center);
+}
+
+/* ===============================
+   LED DISPLAY
+================================ */
+
+.led-display {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 2px;
+
+    background: #000;
+    border-radius: 50%;
+
+    mask-image: radial-gradient(
+            circle at center,
+            black 90%,
+            transparent 100%
+    );
+
+    opacity: 0;
+}
+
+/* “Pegando no tranco” */
+.assistant-portal.open .led-display {
+    animation: led-power-on 900ms ease-out 520ms forwards;
+}
+
+/* ===============================
+   PIXELS
+================================ */
+
+.led-pixel {
+    width: 6px;
+    height: 6px;
+    background: rgba(140, 47, 47, 0.08);
+    border-radius: 1px;
+}
+
+.led-pixel.on {
+    background: #8C2F2F;
+    box-shadow: 0 0 6px #8C2F2F;
+}
+
+/* ===============================
+   POWER-ON FLICKER
+================================ */
+
+@keyframes led-power-on {
+    0%   { opacity: 0; }
+    12%  { opacity: 0.25; }
+    22%  { opacity: 0; }
+    32%  { opacity: 0.55; }
+    42%  { opacity: 0.15; }
+    55%  { opacity: 0.75; }
+    70%  { opacity: 0.35; }
+    85%  { opacity: 1; }
+    100% { opacity: 1; }
+}
