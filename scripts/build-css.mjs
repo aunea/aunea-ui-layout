@@ -2,17 +2,16 @@ import fs from 'fs';
 import path from 'path';
 
 const root = process.cwd();
+const src = path.join(root, 'src/styles');
+const dist = path.join(root, 'dist');
 
-const input = path.join(root, 'src/styles/index.css');
-const outputDir = path.join(root, 'dist');
-const output = path.join(outputDir, 'styles.css');
+if (!fs.existsSync(dist)) fs.mkdirSync(dist);
 
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
+for (const file of fs.readdirSync(src)) {
+    fs.copyFileSync(
+        path.join(src, file),
+        path.join(dist, file)
+    );
 }
 
-const css = fs.readFileSync(input, 'utf8');
-
-fs.writeFileSync(output, css);
-
-console.log('✔︎ dist/styles.css generated');
+console.log('✔︎ CSS copied to dist');
