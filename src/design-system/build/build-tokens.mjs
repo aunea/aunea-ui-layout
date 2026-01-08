@@ -5,7 +5,7 @@ const sd = new StyleDictionary({
     platforms: {
         css: {
             transformGroup: "css",
-            buildPath: "src/design-system/dist/",
+            buildPath: "src/styles/",
             files: [
                 {
                     destination: "tokens.css",
