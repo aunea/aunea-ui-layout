@@ -1,5 +1,13 @@
 import type { Preview, Decorator } from '@storybook/react';
-import '../dist/index.css';
+import "../dist/assistant.css"
+import "../dist/assistant-frame.css"
+import "../dist/button.css"
+import "../dist/gradients.css"
+import "../dist/main-menu.css"
+import "../dist/reset.css"
+import "../dist/theme.css"
+import "../dist/theme-toggle.css"
+import "../dist/tokens.css"
 
 const withTheme: Decorator = (Story: Decorator, context: Preview) => {
     const theme = context.globals.theme || 'light';
