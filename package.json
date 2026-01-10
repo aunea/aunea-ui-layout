@@ -26,15 +26,15 @@
     "@storybook/react-vite": "^10.1.11",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^19",
+    "react-dom": "^19",
     "rimraf": "^6.1.2",
     "storybook": "^10.1.11",
     "style-dictionary": "^5.1.1"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "scripts": {
     "clean": "rimraf dist",
