@@ -1,4 +1,3 @@
-import '../../styles/main-menu.css';
 import type {ReactNode} from "react";
 import React from "react";
 
