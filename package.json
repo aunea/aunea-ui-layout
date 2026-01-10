@@ -1,6 +1,6 @@
 {
   "name": "@aunea/ui-layout",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "AUNE-A design system: tokens and base styles",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
