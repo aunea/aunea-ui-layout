@@ -1,12 +1,15 @@
 import '../../styles/main-menu.css';
+import type {ReactNode} from "react";
+import React from "react";
 
 type Props = {
-    left?: React.ReactNode;
-    center?: React.ReactNode;
-    right?: React.ReactNode;
+    left?: ReactNode;
+    center?: ReactNode;
+    right?: ReactNode;
 };
 
-export function MainMenu({ left, center, right }: Props) {
+
+export function MainMenu({ left, center, right }: Props): React.JSX.Element {
     return (
         <header className="ui-main-menu">
             <div className="ui-main-menu__left">

@@ -6,6 +6,8 @@
     "declaration": true,
     "declarationMap": false,
     "emitDeclarationOnly": false,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
     "noEmit": false
   },
   "include": ["src/components"],
