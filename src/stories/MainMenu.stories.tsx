@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { MainMenu, MainMenuItem } from '../components';
 
 const meta: Meta<typeof MainMenu> = {
-    title: 'Layout/MainMenu',
+    title: 'MainMenu',
     component: MainMenu,
     parameters: {
         layout: 'fullscreen',

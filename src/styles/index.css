@@ -2,5 +2,7 @@
 @import './reset.css';
 @import './theme.css';
 @import './gradients.css';
+@import './assistant.css';
+@import './assistant-frame.css';
 @import './button.css';
 @import './main-menu.css';

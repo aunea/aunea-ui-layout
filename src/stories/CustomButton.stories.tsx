@@ -4,7 +4,7 @@ import React from 'react';
 import { JSX } from 'react/jsx-runtime';
 
 const meta: Meta<typeof CustomButton> = {
-    title: 'Components/Button',
+    title: 'Button',
     component: CustomButton,
     parameters: {
         layout: 'centered',
