@@ -8,5 +8,11 @@
     "emitDeclarationOnly": false,
     "noEmit": false
   },
-  "include": ["src/components"]
+  "include": ["src/components"],
+  "exclude": [
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    ".storybook",
+    "src/stories"
+  ]
 }
