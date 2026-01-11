@@ -1,4 +1,4 @@
-//import "../..//styles/assistant-frame.css"
+//import "../../styles/assistant-frame.css"
 export function AssistantFrame() {
     return (
         <div className="assistant-frame">
@@ -7,7 +7,9 @@ export function AssistantFrame() {
             <div className="arc-right"></div>
             <div className="relief relief-right"></div>
             <div className="mid-circle"></div>
+            <div className="relief relief-mid"></div>
             <div className="inner-circle"></div>
+            <div className="relief relief-inner"></div>
         </div>
     );
 }
