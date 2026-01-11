@@ -1,0 +1,104 @@
+.ui-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-stack-sm);
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: var(--spacing-stack-md) var(--spacing-stack-md);
+    border-radius: var(--radius-lg);
+
+    background: var(--app-surface-overlay);
+    backdrop-filter: blur(0.9em);
+    -webkit-backdrop-filter: blur(0.9em);
+
+    font-family: var(--font-family-base);
+    color: var(--app-text-primary);
+
+    box-shadow:
+            inset 0 0 0 0.08em rgba(255, 255, 255, 0.08),
+            0 0.9em 2em rgba(0, 0, 0, 0.25);
+}
+
+/* header */
+.ui-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-stack-sm);
+
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+.ui-card__icon {
+    font-size: var(--font-size-md);
+    line-height: 1;
+}
+
+.ui-card__title {
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* value */
+.ui-card__value {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-stack-xs);
+}
+
+.ui-card__number {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+}
+
+.ui-card__unit {
+    font-size: var(--font-size-md);
+    opacity: 0.8;
+}
+
+/* footer */
+.ui-card__footer {
+    display: flex;
+    justify-content: flex-start;
+    font-size: var(--font-size-sm);
+}
+
+.ui-card__delta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-stack-xs);
+}
+
+.ui-card__delta-value {
+    font-weight: var(--font-weight-medium);
+}
+
+.ui-card__delta-label {
+    opacity: 0.65;
+}
+
+/* tones */
+.ui-card--positive .ui-card__number,
+.ui-card--positive .ui-card__delta {
+    color: var(--app-success);
+}
+
+.ui-card--neutral .ui-card__number,
+.ui-card--neutral .ui-card__delta {
+    color: var(--app-warning);
+}
+
+.ui-card--negative .ui-card__number,
+.ui-card--negative .ui-card__delta {
+    color: var(--app-danger);
+}
+
+.ui-card--info .ui-card__number,
+.ui-card--info .ui-card__delta {
+    color: var(--app-processing);
+}

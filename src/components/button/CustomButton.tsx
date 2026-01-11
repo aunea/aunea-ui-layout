@@ -10,7 +10,7 @@ type ButtonColor =
     | 'gray'
     | 'main';
 
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonSize = 'sm' | 'md' | 'lg' | 'xl';
 type ButtonShape = 'default' | 'round';
 
 type Props = {
