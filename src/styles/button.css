@@ -45,6 +45,12 @@
     font-size: var(--font-size-lg);
 }
 
+.ui-button--xl {
+    height: var(--button-height-xl);
+    padding: 0 var(--spacing-inline-xl);
+    font-size: var(--font-size-xl);
+}
+
 /* =========================
    Shape
    ========================= */
