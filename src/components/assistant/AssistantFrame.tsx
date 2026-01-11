@@ -1,4 +1,4 @@
-import "../..//styles/assistant-frame.css"
+//import "../..//styles/assistant-frame.css"
 export function AssistantFrame() {
     return (
         <div className="assistant-frame">
