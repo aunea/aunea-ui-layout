@@ -1,6 +1,6 @@
 import type { Preview, Decorator } from '@storybook/react';
 import "../dist/assistant.css"
-//import "../dist/assistant-frame.css"
+import "../dist/assistant-frame.css"
 import "../dist/button.css"
 import "../dist/gradients.css"
 import "../dist/main-menu.css"
