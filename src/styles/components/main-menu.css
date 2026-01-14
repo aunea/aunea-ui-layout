@@ -1,0 +1,95 @@
+.ui-main-menu-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.ui-main-menu {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    width: 100%;
+
+    color: var(--app-text-primary);
+}
+
+/* LEFT */
+.ui-main-menu__left {
+    display: flex;
+    align-items: center;
+    height: 84px;
+    padding-left: var(--spacing-lg);
+
+    font-size: var(--font-size-lg);
+
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            var(--app-bg-primary) 70px,
+            var(--app-bg-primary)
+    );
+
+    mask: radial-gradient(
+            110% 20px at bottom right,
+            transparent 96%,
+            black
+    );
+}
+
+/* CENTER */
+.ui-main-menu__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+
+    background: linear-gradient(to bottom,
+    transparent,
+    var(--app-bg-primary) 70px,
+    var(--app-bg-primary)
+    );
+}
+
+/* RIGHT */
+.ui-main-menu__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 64px;
+    padding-right: var(--spacing-lg);
+
+    background: linear-gradient(to bottom,
+    transparent,
+    var(--app-bg-primary) 70px,
+    var(--app-bg-primary)
+    );
+}
+
+/* MOBILE FIRST */
+.menu-items {
+    display: none;
+}
+
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* TABLET E ACIMA */
+@media (min-width: 768px) {
+    .menu-items {
+        display: flex;
+        gap: 24px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu-items {
+        gap: 32px;
+    }
+}

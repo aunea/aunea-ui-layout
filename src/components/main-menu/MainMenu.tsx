@@ -1,5 +1,5 @@
-import type {ReactNode} from "react";
-import React from "react";
+import { ReactNode, useState } from 'react';
+import { MobileMenuDrawer } from './MobileMenuDrawer';
 
 type Props = {
     left?: ReactNode;
@@ -7,21 +7,39 @@ type Props = {
     right?: ReactNode;
 };
 
+export function MainMenu({ left, center, right }: Props) {
+    const [open, setOpen] = useState(false);
 
-export function MainMenu({ left, center, right }: Props): React.JSX.Element {
     return (
-        <header className="ui-main-menu">
-            <div className="ui-main-menu__left">
-                {left}
+        <header className="ui-main-menu-wrapper">
+            <div className="ui-main-menu">
+                <div className="ui-main-menu__left">
+                    {left}
+                </div>
+
+                <div className="ui-main-menu__center">
+                    {center}
+
+                    <button
+                        className="menu-toggle"
+                        onClick={() => setOpen(v => !v)}
+                        aria-label="Abrir menu">
+                        ☰
+                    </button>
+                </div>
+
+                <div className="ui-main-menu__right">
+                    {right}
+                </div>
             </div>
 
-            <div className="ui-main-menu__center">
-                {center}
-            </div>
-
-            <div className="ui-main-menu__right">
-                {right}
-            </div>
+            {open && (
+                <MobileMenuDrawer
+                    onClose={() => setOpen(false)}
+                >
+                    {center}
+                </MobileMenuDrawer>
+            )}
         </header>
     );
 }

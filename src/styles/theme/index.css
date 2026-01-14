@@ -1,0 +1,7 @@
+@import "../base/tokens.css";
+@import "./light.css";
+@import "./dark.css";
+
+:root {
+    color-scheme: light dark;
+}

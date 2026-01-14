@@ -1,0 +1,9 @@
+:root {
+    --bp-mobile: 0;
+    --bp-tablet: 768px;
+    --bp-laptop: 1024px;
+    --bp-desktop: 1440px;
+
+    --sidebar-min: 320px;
+    --sidebar-max: 480px;
+}

@@ -1,10 +1,27 @@
-@import './tokens.css';
-@import './reset.css';
-@import './theme.css';
-@import './gradients.css';
-@import './assistant.css';
-@import './assistant-frame.css';
-@import './button.css';
-@import './card.css';
-@import './carousel.css';
-@import './main-menu.css';
+@import './base/tokens.css';
+@import './base/reset.css';
+@import './base/viewport.css';
+
+@import './effects/gradients.css';
+
+@import './layout/app-root.css';
+@import './layout/page.css';
+@import './layout/containers.css';
+@import './layout/section.css';
+
+@import "./responsive/breakpoints.css";
+@import "./responsive/grids.css";
+
+@import "./utils/overflow.css";
+@import "./utils/helpers.css";
+
+@import "./theme/index.css";
+
+@import './components/assistant.css';
+@import './components/assistant-frame.css';
+@import './components/button.css';
+@import './components/card.css';
+@import './components/carousel.css';
+@import './components/main-menu.css';
+@import './components/menu-item.css';
+@import './components/mobile-menu.css';

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Carousel } from '../components/carousel/Carousel'
 
 const meta: Meta<typeof Carousel> = {
-    title: 'UI/Carousel',
+    title: 'Carousel',
     component: Carousel,
     parameters: {
         layout: 'centered'
@@ -12,7 +12,6 @@ const meta: Meta<typeof Carousel> = {
 export default meta
 type Story = StoryObj<typeof Carousel>
 
-/* Card fake só para visualização */
 function Card({ label }: { label: string }) {
     return (
         <div
@@ -34,14 +33,20 @@ function Card({ label }: { label: string }) {
 
 export const ItemsPerView: Story = {
     render: () => (
-        <div style={{ width: '900px' }}>
-            <Carousel itemsPerView={3}>
-                <Card label="Página 1" />
-                <Card label="Página 2" />
-                <Card label="Página 3" />
-                <Card label="Página 4" />
-                <Card label="Página 5" />
-            </Carousel>
+        <div className="app-root">
+            <main className="page">
+                <section className="section">
+                    <div style={{ width: '900px' }}>
+                        <Carousel itemsPerView={3}>
+                            <Card label="Página 1" />
+                            <Card label="Página 2" />
+                            <Card label="Página 3" />
+                            <Card label="Página 4" />
+                            <Card label="Página 5" />
+                        </Carousel>
+                    </div>
+                </section>
+            </main>
         </div>
     )
 }

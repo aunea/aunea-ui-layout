@@ -1,0 +1,10 @@
+:root {
+    --vw: 1vw;
+    --vh: 1vh;
+}
+
+@supports (height: 100dvh) {
+    :root {
+        --vh: 1dvh;
+    }
+}

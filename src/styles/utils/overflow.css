@@ -1,0 +1,7 @@
+.no-scroll {
+    overflow: hidden;
+}
+
+.clip {
+    overflow: clip;
+}

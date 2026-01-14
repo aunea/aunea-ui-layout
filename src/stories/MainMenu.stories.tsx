@@ -1,5 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { MainMenu, MainMenuItem } from '../components';
+import type {Meta, StoryObj} from '@storybook/react';
+import {MainMenu, MainMenuItem} from '../components';
+
+import "../styles/components/main-menu.css"
 
 const meta: Meta<typeof MainMenu> = {
     title: 'MainMenu',
@@ -15,26 +17,17 @@ type Story = StoryObj<typeof MainMenu>;
 
 export const Default: Story = {
     render: () => (
-        <div style={{ padding: 24 }}>
-            <MainMenu
-                left={
-                    <div style={{ fontWeight: 600 }}>
-                        AUNE-A
-                    </div>
-                }
-                center={
-                    <>
-                        <MainMenuItem label="Home" active />
-                        <MainMenuItem label="Body metrics" />
-                        <MainMenuItem label="Settings" />
-                    </>
-                }
-                right={
-                    <div>
-                        Toggle
-                    </div>
-                }
-            />
-        </div>
+        <MainMenu
+            left={<strong>AUNE-A</strong>}
+            center={
+                <nav className="menu-items">
+                    <MainMenuItem label="Home" active/>
+                    <MainMenuItem label="Body metrics"/>
+                    <MainMenuItem label="Settings"/>
+                </nav>
+            }
+            right={<div>Toggle</div>}
+        />
     ),
 };
+

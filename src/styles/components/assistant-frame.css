@@ -12,7 +12,7 @@
     height: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background: var(--color-color-gray-500);
+    background: var(--color-gray-500);
     pointer-events: none;
     overflow: hidden;
     z-index: 1;
@@ -23,7 +23,7 @@
     position: absolute;
     top: 0;
     left: 6%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     mask: radial-gradient(
             circle,
             transparent 42.5%,
@@ -45,7 +45,7 @@
     position: absolute;
     top: 0;
     right: 6%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     mask: radial-gradient(
             circle,
             transparent 42.5%,
@@ -67,7 +67,7 @@
     position: absolute;
     top: 10.5%;
     right: 9.5%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     mask: radial-gradient(
             circle,
             transparent 42.5%,
@@ -83,7 +83,7 @@
     position: absolute;
     top: 22.5%;
     right: 15.8%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     mask: radial-gradient(
             circle,
             transparent 42.5%,
@@ -111,7 +111,7 @@
     position: absolute;
     top: 4%;
     left: 8%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     pointer-events: none;
     overflow: hidden;
 }
@@ -170,7 +170,7 @@
     position: absolute;
     top: 6%;
     right: 8%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     pointer-events: none;
     overflow: hidden;
 }
@@ -228,7 +228,7 @@
     position: absolute;
     top: 15%;
     right: 12%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     pointer-events: none;
     animation: rotate-inverse 10s linear infinite;
     overflow: hidden;
@@ -289,7 +289,7 @@
     position: absolute;
     top: 25%;
     right: 17%;
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-radius-full);
     pointer-events: none;
     animation: rotate 14s linear infinite;
     overflow: hidden;

@@ -1,0 +1,27 @@
+.ui-menu-item {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: transparent;
+    border-radius: var(--radius-pill);
+    border: none;
+
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--app-text-primary);
+
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ui-menu-item:hover {
+    background: color-mix(
+            in srgb,
+            var(--app-surface-primary) 30%,
+            transparent
+    );
+    color: var(--color-status-warning);
+}
+
+.ui-menu-item--active {
+    background: var(--app-surface-warning);
+    color: #000;
+}

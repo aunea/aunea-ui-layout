@@ -1,0 +1,47 @@
+[data-theme="light"] {
+    /* background */
+    --app-bg-primary: var(--color-background-light);
+    --app-bg-inverse: var(--color-background-dark);
+    --app-bg-black: var(--color-background-black);
+    --app-bg-white: var(--color-background-white);
+    --app-bg-warning: var(--color-background-warning);
+    --app-bg-danger: var(--color-background-danger);
+    --app-bg-processing: var(--color-background-processing);
+    --app-bg-success: var(--color-background-success);
+    --app-bg-disabled: var(--color-background-disabled);
+
+    /* surface */
+    --app-surface-primary: var(--color-surface-dark);
+    --app-surface-inverse: var(--color-surface-light);
+    --app-surface-black: var(--color-surface-black);
+    --app-surface-white: var(--color-surface-white);
+    --app-surface-warning: var(--color-surface-warning);
+    --app-surface-danger: var(--color-surface-danger);
+    --app-surface-processing: var(--color-surface-processing);
+    --app-surface-success: var(--color-surface-success);
+    --app-surface-disabled: var(--color-surface-disabled);
+
+    /* text */
+    --app-text-primary: var(--color-text-dark);
+    --app-text-inverse: var(--color-text-light);
+    --app-text-black: var(--color-text-black);
+    --app-text-white: var(--color-text-white);
+    --app-text-warning: var(--color-text-warning);
+    --app-text-danger: var(--color-text-danger);
+    --app-text-processing: var(--color-text-processing);
+    --app-text-success: var(--color-text-success);
+    --app-text-disabled: var(--color-text-disabled);
+
+    /* border */
+    --app-border-primary: var(--color-border-dark);
+    --app-border-inverse: var(--color-borderlight);
+    --app-border-black: var(--color-border-black);
+    --app-border-white: var(--color-border-white);
+    --app-border-warning: var(--color-border-warning);
+    --app-border-danger: var(--color-border-danger);
+    --app-border-processing: var(--color-border-processing);
+    --app-border-success: var(--color-border-success);
+    --app-border-disabled: var(--color-border-disabled);
+
+    --app-bg-image: url("/src/assets/backgrounds/light-bg.png");
+}
