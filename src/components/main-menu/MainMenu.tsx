@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { MobileMenuDrawer } from './MobileMenuDrawer';
 
 type Props = {
