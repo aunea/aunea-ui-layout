@@ -2,14 +2,27 @@ import fs from "fs";
 import path from "path";
 
 const root = process.cwd();
-const src = path.join(root, "src/styles");
+
+const stylesSrc = path.join(root, "src/styles");
+const assetsSrc = path.join(root, "src/assets");
+
 const dist = path.join(root, "dist");
+const stylesDist = path.join(dist, "styles");
+const assetsDist = path.join(dist, "assets");
 
-copyRecursive(src, dist);
+copyRecursive(stylesSrc, stylesDist, file => file.endsWith(".css"));
+copyRecursive(assetsSrc, assetsDist);
 
-console.log("✔ CSS copied to dist");
+console.log("✔ CSS and assets copied to dist");
 
-function copyRecursive(source, target) {
+/**
+ * @param {string} source
+ * @param {string} target
+ * @param {(file: string) => boolean} filter
+ */
+function copyRecursive(source, target, filter = () => true) {
+    if (!fs.existsSync(source)) return;
+
     if (!fs.existsSync(target)) {
         fs.mkdirSync(target, { recursive: true });
     }
@@ -21,8 +34,8 @@ function copyRecursive(source, target) {
         const stat = fs.statSync(srcPath);
 
         if (stat.isDirectory()) {
-            copyRecursive(srcPath, distPath);
-        } else if (entry.endsWith(".css")) {
+            copyRecursive(srcPath, distPath, filter);
+        } else if (filter(entry)) {
             fs.copyFileSync(srcPath, distPath);
         }
     }

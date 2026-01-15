@@ -12,7 +12,8 @@
       "import": "./dist/components/index.js",
       "types": "./dist/components/index.d.ts"
     },
-    "./styles.css": "./dist/index.css"
+    "./styles.css": "./dist/index.css",
+    "./assets": "./dist/assets/index.js"
   },
   "sideEffects": [
     "dist/index.css"
