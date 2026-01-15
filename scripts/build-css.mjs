@@ -11,7 +11,7 @@ const stylesDist = path.join(dist, "styles");
 const assetsDist = path.join(dist, "assets");
 
 copyRecursive(stylesSrc, stylesDist, file => file.endsWith(".css"));
-copyRecursive(assetsSrc, assetsDist);
+copyRecursive(assetsSrc, assetsDist, file => !file.endsWith('.ts'));
 
 console.log("✔ CSS and assets copied to dist");
 

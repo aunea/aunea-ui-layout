@@ -10,7 +10,10 @@
     "verbatimModuleSyntax": true,
     "noEmit": false
   },
-  "include": ["src/components"],
+  "include": [
+    "src/components",
+    "src/assets/**/*.ts"
+  ],
   "exclude": [
     "**/*.stories.ts",
     "**/*.stories.tsx",
