@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import type { ReactNode } from 'react';
 
-import '../../styles/components/card.css';
+//import '../../styles/components/card.css';
 
 export type VariationType = 'positive' | 'negative' | 'neutral';
 
