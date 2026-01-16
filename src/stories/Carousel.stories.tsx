@@ -1,53 +1,72 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Carousel } from '../components/carousel/Carousel'
 
-const meta: Meta<typeof Carousel> = {
+import "../styles/components/carousel.css"
+
+type StoryArgs = {
+    length: number;
+};
+
+const meta: Meta<StoryArgs> = {
     title: 'Carousel',
-    component: Carousel,
     parameters: {
-        layout: 'centered'
-    }
-}
+        layout: 'fullscreen',
+    },
+    argTypes: {
+        length: {
+            control: {
+                type: 'number',
+                min: 1,
+                max: 20,
+                step: 1,
+            },
+            description: 'Quantidade total de cards',
+        },
+    },
+    args: {
+        length: 5,
+    },
+};
 
-export default meta
-type Story = StoryObj<typeof Carousel>
+export default meta;
 
-function Card({ label }: { label: string }) {
+type Story = StoryObj<StoryArgs>;
+
+/* =========================
+   MOCK CARD
+   ========================= */
+
+function MockCard({ index }: { index: number }) {
     return (
         <div
             style={{
-                height: '180px',
-                borderRadius: '12px',
-                background: '#d9d9d9',
+                height: '100%',
+                minHeight: 240,
+                background: 'linear-gradient(135deg, #222, #444)',
+                color: '#fff',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.1rem',
-                fontWeight: 500
+                fontSize: 24,
+                borderRadius: 12,
+                userSelect: 'none',
             }}
         >
-            {label}
+            Card {index + 1}
         </div>
-    )
+    );
 }
 
-export const ItemsPerView: Story = {
-    render: () => (
-        <div className="app-root">
-            <main className="page">
-                <section className="section">
-                    <div style={{ width: '900px' }}>
-                        <Carousel itemsPerView={3}>
-                            <Card label="Página 1" />
-                            <Card label="Página 2" />
-                            <Card label="Página 3" />
-                            <Card label="Página 4" />
-                            <Card label="Página 5" />
-                        </Carousel>
-                    </div>
-                </section>
-            </main>
-        </div>
-    )
-}
+/* =========================
+   STORY
+   ========================= */
 
+export const Playground: Story = {
+    render: ({ length }) => (
+        <div style={{ width: '100vw', height: '100dvh', padding: 24 }}>
+            <Carousel length={length}>
+                {(index) => <MockCard index={index} />}
+            </Carousel>
+        </div>
+    ),
+};

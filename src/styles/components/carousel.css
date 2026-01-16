@@ -1,72 +1,89 @@
-.ui-carousel {
+.carousel {
+    --arrow-gap: var(--spacing-2xl);
+    --slot-gap: var(--spacing-lg);
     position: relative;
     width: 100%;
-    --gap: 16px;
+    height: 100%;
 }
 
-.ui-carousel-viewport {
+.carousel-inner {
+    display: grid;
+    grid-template-columns: var(--arrow-gap) 2fr var(--arrow-gap);
+    align-items: center;
+    height: 100%;
+}
+
+.carousel-arrow {
+    background: var(--app-surface-primary);
+    color: var(--app-text-inverse);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    width: 2.6rem;
+    height: 2.6rem;
+    display: grid;
+    place-items: center;
+    opacity: 0.5;
+}
+
+.carousel-viewport {
     overflow: hidden;
-    width: 100%;
+    height: 100%;
 }
 
-.ui-carousel-track {
+.carousel-track {
     display: flex;
-    gap: var(--gap);
+    height: 100%;
+    transform: translateX(calc(-1 * var(--slot-size)));
+}
+
+.carousel-slot {
+    flex: 0 0 var(--slot-size);
+    height: 100%;
+    padding: var(--spacing-2xl) calc(var(--slot-gap) / 2);
+    box-sizing: border-box;
+    transition:
+            transform 0.35s ease,
+            opacity 0.35s ease;
+}
+
+.carousel-slot[data-buffer="true"][data-side="left"] {
+    opacity: 0.35;
+}
+
+.carousel-slot[data-buffer="true"][data-side="right"] {
+    opacity: 0.35;
+}
+
+.carousel[data-phase="next"] .carousel-track {
     transition: transform 0.4s ease;
+    transform: translateX(calc(-2 * var(--slot-size)));
 }
 
-.ui-carousel-item {
-    flex: 0 0
-    calc(
-            (100% - (var(--items-per-view) - 1) * var(--gap)) /
-            var(--items-per-view)
-    );
+.carousel[data-phase="prev"] .carousel-track {
+    transition: transform 0.4s ease;
+    transform: translateX(0%);
 }
 
-.ui-carousel[style*='--item-width'] .ui-carousel-item {
-    flex: 0 0 var(--item-width);
+.carousel[data-phase="idle"] .carousel-track {
+    transition: none;
+    transform: translateX(calc(-1 * var(--slot-size)));
 }
 
-.ui-carousel-arrow {
-    position: absolute;
-    top: 40%;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--app-background-inverse);
-    cursor: pointer;
-    z-index: 2;
+.carousel[data-phase="next"] .carousel-slot[data-buffer="true"],
+.carousel[data-phase="prev"] .carousel-slot[data-buffer="true"] {
+    opacity: 1;
 }
 
-.ui-carousel-arrow.left {
-    left: -2rem;
+@media (hover: hover) {
+    .carousel[data-mode="tablet"] .carousel-slot:hover,
+    .carousel[data-mode="laptop"] .carousel-slot:hover,
+    .carousel[data-mode="desktop"] .carousel-slot:hover {
+        transform: scale(1.02);
+    }
 }
 
-.ui-carousel-arrow.right {
-    right: -2rem;
-}
-
-.ui-carousel-arrow:disabled {
-    opacity: 0.3;
-    cursor: default;
-}
-
-.ui-carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-}
-
-.ui-carousel-dots .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--radius-round);
-    border: none;
-    background: var(--app-background-inverse);
-    cursor: pointer;
-}
-
-.ui-carousel-dots .dot.active {
-    background: var(--color-color-gray-500);
+.carousel-slot:focus-visible {
+    outline: 2px solid currentColor;
 }
