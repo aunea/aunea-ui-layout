@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import type { TouchEvent, ReactNode } from 'react';
+import type { TouchEvent } from 'react';
 
 type CarouselProps = {
     length: number;
-    children: (params: {
+    renderItem: (params: {
         index: number;
         isHovered: boolean;
         isSingle: boolean;
@@ -23,7 +23,7 @@ const ANIMATION_DURATION = 400;
 
 export function Carousel({
                              length,
-                             children,
+                             renderItem,
                          }: CarouselProps) {
     const [current, setCurrent] = useState(0);
     const [mode, setMode] = useState<Mode>('mobile');
@@ -180,7 +180,7 @@ export function Carousel({
                             >
                                 {buffer && visibleCount === 1
                                     ? null
-                                    : children({
+                                    : renderItem({
                                         index,
                                         isHovered:
                                             visibleCount === 1 ||
