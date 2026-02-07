@@ -1,74 +1,40 @@
-/* =========================
-   BASE – MOBILE FIRST
-   ========================= */
-
-.page {
+.grid {
     display: grid;
-    width: 100vw;
-    height: 100dvh;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    overflow: hidden;
 }
 
-/* =========================
-   TABLET – RETRATO
-   ========================= */
+.content {
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 48px);
+    z-index: 1;
+}
 
-@media (min-width: 600px) and (orientation: portrait) {
-    .page.two-columns {
-        grid-template-columns: 1fr;
+@media (min-width: var(--bp-wide)) {
+    .content {
+        max-width: 1400px;
     }
 }
 
-/* =========================
-   TABLET – PAISAGEM
-   ========================= */
-
-@media (min-width: 768px) and (orientation: landscape) {
-    .page.two-columns {
-        grid-template-columns: minmax(var(--sidebar-min), 40%) 1fr;
+@media (min-width: var(--bp-ultrawide)) {
+    .content {
+        max-width: var(--content-max);
     }
 }
 
-/* =========================
-   NOTEBOOK / DESKTOP
-   ========================= */
+.content-grid {
+    display: grid;
+    gap: clamp(24px, 4vw, 64px);
+}
 
-@media (min-width: 1024px) {
-    .page.sidebar {
-        grid-template-columns: clamp(
-            var(--sidebar-min),
-            30vw,
-            var(--sidebar-max)
-        ) 1fr;
+@media (max-width: var(--bp-mobile-max)) {
+    .content-grid {
+        grid-template-columns: 1fr !important;
     }
 }
 
-/* =========================
-   ULTRAWIDE
-   ========================= */
-
-@media (min-width: 1440px) {
-    .page.sidebar {
-        grid-template-columns: clamp(
-            360px,
-            25vw,
-            480px
-        ) 1fr;
-    }
-}
-
-/* =========================
-   ULTRAWIDE COMPRIDO
-   ========================= */
-
-@media (min-width: 1920px) and (min-aspect-ratio: 21/9) {
-    .page.sidebar {
-        grid-template-columns: clamp(
-            420px,
-            22vw,
-            520px
-        ) 1fr;
+@media (min-height: var(--bp-height-fixed)) {
+    .page.no-scroll {
+        overflow-y: hidden;
     }
 }

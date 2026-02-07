@@ -1,0 +1,240 @@
+/* =========================
+   Base input
+   ========================= */
+
+.ui-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    background: var(--app-surface-primary);
+    color: var(--app-text-primary);
+
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--input-border);
+
+    transition:
+            background-color var(--motion-duration-motion-duration-fast) ease,
+            color var(--motion-duration-motion-duration-fast) ease,
+            border-color var(--motion-duration-motion-duration-fast) ease,
+            box-shadow var(--motion-duration-motion-duration-fast) ease,
+            transform var(--motion-duration-motion-duration-fast) ease;
+}
+
+/* =========================
+   Field
+   ========================= */
+
+.ui-input__field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-family: var(--font-family-base);
+    font-size: inherit;
+    color: inherit;
+
+    padding: 0 var(--spacing-md);
+    height: 100%;
+}
+
+textarea.ui-input__field {
+    padding: var(--spacing-md);
+    min-height: 120px;
+}
+
+/* =========================
+   Sizes (same scale as button)
+   ========================= */
+
+.ui-input--sm {
+    height: var(--button-size-sm);
+    font-size: var(--font-size-sm);
+}
+
+.ui-input--md {
+    height: var(--button-size-md);
+    font-size: var(--font-size-md);
+}
+
+.ui-input--lg {
+    height: var(--button-size-lg);
+    font-size: var(--font-size-lg);
+}
+
+.ui-input--xl {
+    height: var(--button-size-hero);
+    font-size: var(--font-size-xl);
+}
+
+/* =========================
+   With icon
+   ========================= */
+
+.ui-input--with-icon .ui-input__field {
+    padding-left: calc(var(--spacing-md) + 22px);
+}
+
+.ui-input__icon {
+    position: absolute;
+    left: var(--spacing-md);
+    color: var(--app-text-disabled);
+}
+
+/* =========================
+   Floating label
+   ========================= */
+
+.ui-input__label {
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    padding: 0 var(--spacing-xs);
+
+    background: var(--app-surface-primary);
+    color: var(--app-text-disabled);
+
+    font-size: var(--font-size-sm);
+
+    transition:
+            top var(--motion-duration-motion-duration-fast) ease,
+            font-size var(--motion-duration-motion-duration-fast) ease,
+            color var(--motion-duration-motion-duration-fast) ease;
+}
+
+.ui-input--filled .ui-input__label,
+.ui-input:focus-within .ui-input__label {
+    top: -6px;
+    font-size: var(--font-size-xs);
+    color: var(--app-text-processing);
+}
+
+/* =========================
+   Toggle password
+   ========================= */
+
+.ui-input__toggle-password {
+    background: none;
+    border: none;
+    margin-right: var(--spacing-md);
+    cursor: pointer;
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+
+    color: var(--app-text-processing);
+}
+
+/* =========================
+   Variants
+   ========================= */
+
+.ui-input--solid {
+    background: var(--app-surface-primary);
+}
+
+.ui-input--outline {
+    background: transparent;
+}
+
+/* =========================
+   States (semantic like button)
+   ========================= */
+
+.ui-input--main {
+    --input-border: var(--app-border-primary);
+}
+
+.ui-input--success {
+    --input-border: var(--app-border-success);
+}
+
+.ui-input--warning {
+    --input-border: var(--app-border-warning);
+}
+
+.ui-input--danger {
+    --input-border: var(--app-border-danger);
+}
+
+.ui-input--processing {
+    --input-border: var(--app-border-processing);
+}
+
+.ui-input--gray {
+    --input-border: var(--app-border-disabled);
+}
+
+/* =========================
+   Focus
+   ========================= */
+
+.ui-input:focus-within {
+    box-shadow: var(--app-shadow-medium);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   Loading
+   ========================= */
+
+.ui-input--loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.ui-input__loader {
+    width: 16px;
+    height: 16px;
+    margin-right: var(--spacing-md);
+
+    border: 2px solid var(--app-border-processing);
+    border-top-color: transparent;
+    border-radius: 50%;
+
+    animation: input-spin 0.8s linear infinite;
+}
+
+@keyframes input-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =========================
+   Error message
+   ========================= */
+
+.ui-input__error-message {
+    margin-left: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    color: var(--app-text-danger);
+}
+
+/* =========================
+   Shake feedback
+   ========================= */
+
+.ui-input--shake {
+    animation: input-shake 0.3s;
+}
+
+@keyframes input-shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+/* =========================
+   Disabled
+   ========================= */
+
+.ui-input__field:disabled {
+    color: var(--app-text-disabled);
+    cursor: not-allowed;
+}

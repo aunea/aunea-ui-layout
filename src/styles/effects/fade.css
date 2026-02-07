@@ -1,0 +1,40 @@
+.page.has-fade::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.6) 0,
+            rgba(0, 0, 0, 0.6) calc((100vw - var(--content-max)) / 2 - 80px),
+            transparent calc((100vw - var(--content-max)) / 2),
+            transparent calc((100vw + var(--content-max)) / 2),
+            rgba(0, 0, 0, 0.6) calc((100vw + var(--content-max)) / 2 + 80px),
+            rgba(0, 0, 0, 0.6) 100%
+    );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* SEM FADE QUANDO NÃO SOBRA ESPAÇO */
+@media (max-width: calc(var(--content-max) + 1px)) {
+    .page.has-fade::before {
+        background: none;
+    }
+}
+
+/* ULTRAWIDE: FADE MAIS SUAVE */
+@media (min-width: var(--bp-ultrawide)) {
+    .page.has-fade::before {
+        background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.7) 0,
+                rgba(0, 0, 0, 0.7) calc((100vw - var(--content-max)) / 2 - 120px),
+                transparent calc((100vw - var(--content-max)) / 2),
+                transparent calc((100vw + var(--content-max)) / 2),
+                rgba(0, 0, 0, 0.7) calc((100vw + var(--content-max)) / 2 + 120px),
+                rgba(0, 0, 0, 0.7) 100%
+        );
+    }
+}

@@ -34,7 +34,7 @@
 
     /* border */
     --app-border-primary: var(--color-border-dark);
-    --app-border-inverse: var(--color-borderlight);
+    --app-border-inverse: var(--color-border-light);
     --app-border-black: var(--color-border-black);
     --app-border-white: var(--color-border-white);
     --app-border-warning: var(--color-border-warning);
@@ -43,5 +43,10 @@
     --app-border-success: var(--color-border-success);
     --app-border-disabled: var(--color-border-disabled);
 
-    --app-bg-image: url("/src/assets/backgrounds/light-bg.png");
+    /* shadow */
+    --app-shadow-subtle: var(--shadow-light-subtle);
+    --app-shadow-medium: var(--shadow-light-medium);
+    --app-shadow-heavy: var(--shadow-light-heavy);
+
+    --app-bg-image: url("/src/assets/backgrounds/light-bg.webp");
 }

@@ -1,9 +1,9 @@
 :root {
-    --bp-mobile: 0;
-    --bp-tablet: 768px;
-    --bp-laptop: 1024px;
-    --bp-desktop: 1440px;
+    --bp-height-fixed: 720px;
 
-    --sidebar-min: 320px;
-    --sidebar-max: 480px;
+    --bp-mobile-max: 1023px;
+    --bp-wide: 1440px;
+    --bp-ultrawide: 1920px;
+
+    --content-max: 1600px;
 }

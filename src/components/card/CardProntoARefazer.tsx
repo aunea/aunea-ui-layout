@@ -29,7 +29,7 @@ type CardProps = {
     actionLabel?: string;
 };
 
-export function Card({
+export function CardProntoARefazer({
                          title,
                          content,
                          variation,

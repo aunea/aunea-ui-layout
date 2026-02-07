@@ -1,10 +1,9 @@
 .section {
     min-width: 0;
     min-height: 0;
-    overflow: hidden;
 
     display: flex;
     flex-direction: column;
 
-    background: transparent;
+    overflow: hidden;
 }

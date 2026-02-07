@@ -6,13 +6,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-spacing-md);
+    gap: var(--spacing-md);
 
-    font-weight: var(--font-weight-font-weight-bold);
-    line-height: var(--font-line-height-font-line-height-md);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--font-line-height-md);
 
     border: none;
-    border-radius: var(--radius-radius-lg);
+    border-radius: var(--radius-lg);
     cursor: pointer;
     white-space: nowrap;
 
@@ -28,25 +28,25 @@
 
 .ui-button--sm {
     height: var(--button-size-sm);
-    padding: 0 var(--spacing-spacing-md);
+    padding: 0 var(--spacing-md);
     font-size: var(--font-size-sm);
 }
 
 .ui-button--md {
     height: var(--button-size-md);
-    padding: 0 var(--spacing-spacing-md);
+    padding: 0 var(--spacing-md);
     font-size: var(--font-size-md);
 }
 
 .ui-button--lg {
     height: var(--button-size-lg);
-    padding: 0 var(--spacing-spacing-md);
+    padding: 0 var(--spacing-md);
     font-size: var(--font-size-lg);
 }
 
 .ui-button--xl {
     height: var(--button-size-hero);
-    padding: 0 var(--spacing-spacing-md);
+    padding: 0 var(--spacing-md);
     font-size: var(--font-size-xl);
 }
 
@@ -57,7 +57,7 @@
 .ui-button--round {
     width: var(--button-size-hero);
     padding: 0;
-    border-radius: var(--radius-radius-full);
+    border-radius: var(--radius-full);
 }
 
 .ui-button--round.ui-button--sm {
@@ -191,7 +191,7 @@
    ========================= */
 
 .ui-button:hover:not(:disabled) {
-    box-shadow: var(--app-shadow-hover);
+    box-shadow: var(--app-shadow-medium);
     transform: translateY(-1px);
 }
 
@@ -211,37 +211,37 @@
    ========================= */
 
 .ui-button--main {
-    --btn-bg: var(--app-background-inverse);
-    --btn-text: var(--app-text-primary-inverse);
-    --btn-border: var(--app-background-inverse);
+    --btn-bg: var(--app-bg-inverse);
+    --btn-text: var(--app-text-inverse);
+    --btn-border: var(--app-bg-inverse);
 }
 
 .ui-button--success {
-    --btn-bg: var(--app-success);
-    --btn-text: var(--app-text-primary-inverse);
-    --btn-border: var(--app-success);
+    --btn-bg: var(--app-bg-success);
+    --btn-text: var(--app-text-inverse);
+    --btn-border: var(--app-border-success);
 }
 
 .ui-button--warning {
-    --btn-bg: var(--app-warning);
-    --btn-text: var(--app-text-primary-inverse);
-    --btn-border: var(--app-warning);
+    --btn-bg: var(--app-bg-warning);
+    --btn-text: var(--app-text-inverse);
+    --btn-border: var(--app-border-warning);
 }
 
 .ui-button--danger {
-    --btn-bg: var(--app-danger);
-    --btn-text: var(--app-text-primary-inverse);
-    --btn-border: var(--app-danger);
+    --btn-bg: var(--app-bg-danger);
+    --btn-text: var(--app-text-inverse);
+    --btn-border: var(--app-border-danger);
 }
 
 .ui-button--processing {
-    --btn-bg: var(--app-processing);
-    --btn-text: var(--app-text-primary-inverse);
-    --btn-border: var(--app-processing);
+    --btn-bg: var(--app-bg-processing);
+    --btn-text: var(--app-text-inverse);
+    --btn-border: var(--app-border-processing);
 }
 
 .ui-button--gray {
-    --btn-bg: var(--app-text-disabled);
-    --btn-text: var(--app-text-primary-inverse);
-    --btn-border: var(--app-text-disabled);
+    --btn-bg: var(--app-bg-disabled);
+    --btn-text: var(--app-text-inverse);
+    --btn-border: var(--app-border-disabled);
 }

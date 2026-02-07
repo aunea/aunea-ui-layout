@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card, VariationType } from '../components/card/Card';
+import { CardProntoARefazer, VariationType } from '../components/card/CardProntoARefazer';
 import { Carousel } from '../components/carousel/Carousel';
 
 type StoryArgs = {
@@ -55,7 +55,7 @@ export const Default: Story = {
             >
                 <Carousel length={itemsCount}>
                     {({ index, isHovered, isSingle }) => (
-                        <Card
+                        <CardProntoARefazer
                             title={`Card ${index + 1}`}
                             content="78 kg"
                             variation={{

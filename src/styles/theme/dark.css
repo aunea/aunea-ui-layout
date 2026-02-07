@@ -43,5 +43,10 @@
     --app-border-success: var(--color-border-success);
     --app-border-disabled: var(--color-border-disabled);
 
-    --app-bg-image: url("/src/assets/backgrounds/dark-bg.png");
+    /* shadow */
+    --app-shadow-subtle: var(--shadow-dark-subtle);
+    --app-shadow-medium: var(--shadow-dark-medium);
+    --app-shadow-heavy: var(--shadow-dark-heavy);
+
+    --app-bg-image: url("/src/assets/backgrounds/dark-bg.webp");
 }
